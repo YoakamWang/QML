@@ -7,41 +7,109 @@ Window {//root控件，x y是相对于父控件，window的父控件为平台的
     height: 300
     title: qsTr("MY QML")
 
-    Rectangle {
-         width: 75; height: 75
-         id: button
-         state: "RELEASED"
 
-         MouseArea {
-             anchors.fill: parent
-             onPressed: button.state = "PRESSED"
-             onReleased: button.state = "RELEASED"
-         }
 
-         states: [
-             State {
-                 name: "PRESSED"
-                 PropertyChanges { target: button; color: "lightblue"}
-             },
-             State {
-                 name: "RELEASED"
-                 PropertyChanges { target: button; color: "lightsteelblue"}
-             }
-         ]
 
-         transitions: [
-             Transition {
-                 from: "PRESSED"
-                 to: "RELEASED"
-                 ColorAnimation { target: button; duration: 200}
-             },
-             Transition {
-                 from: "RELEASED"
-                 to: "PRESSED"
-                 ColorAnimation { target: button; duration: 200}
-             }
-         ]
-     }
+//    Button{
+//        id:btn
+//        width:150
+//        height:50
+//        autoRepeat: true
+//        background: Rectangle{
+//            anchors.fill:btn
+//            color: {
+//                if(btn.pressed){
+//                    return "green"
+//                }else{
+//                    return "blue"
+//                }
+//            }
+//            border.color: {
+//                if(btn.pressed){
+//                    return "black"
+//                }else{
+//                    return "red"
+//                }
+//            }
+//        }
+//    }
+
+//    MouseArea{
+//        id:mouseArea
+//        width:200
+//        height:200
+//        acceptedButtons: Qt.LeftButton|Qt.RightButton
+//        cursorShape: Qt.CrossCursor
+//        hoverEnabled: true
+//        Rectangle{
+//            anchors.fill:parent
+//            color:"red"
+//        }
+//        onClicked: {
+//            console.log("clicked")
+//        }
+//        onHoveredChanged: {
+//            console.log("on Hover changed")
+//        }
+
+//        onPressed: {
+//            var ret=pressedButtons&Qt.LeftButton
+//            console.log(ret?"left":"right")
+//            console.log("pressed")
+//        }
+//        onReleased: {
+//            console.log("released")
+//        }
+//    }
+
+//    Component{
+//        id:com
+//        Rectangle{
+//            id:rect
+//            width:200
+//            height:100
+//            color:"black"
+//            Component.onCompleted: {
+//                console.log("onCompleted",width,height,color)
+//            }
+//        }
+
+
+//    Rectangle {
+//         width: 75; height: 75
+//         id: button
+//         state: "RELEASED"
+
+//         MouseArea {
+//             anchors.fill: parent
+//             onPressed: button.state = "PRESSED"
+//             onReleased: button.state = "RELEASED"
+//         }
+
+//         states: [
+//             State {
+//                 name: "PRESSED"
+//                 PropertyChanges { target: button; color: "lightblue"}
+//             },
+//             State {
+//                 name: "RELEASED"
+//                 PropertyChanges { target: button; color: "lightsteelblue"}
+//             }
+//         ]
+
+//         transitions: [
+//             Transition {
+//                 from: "PRESSED"
+//                 to: "RELEASED"
+//                 ColorAnimation { target: button; duration: 200}
+//             },
+//             Transition {
+//                 from: "RELEASED"
+//                 to: "PRESSED"
+//                 ColorAnimation { target: button; duration: 200}
+//             }
+//         ]
+//     }
 
 
 //    Rectangle{
