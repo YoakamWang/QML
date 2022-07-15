@@ -7,7 +7,9 @@ Window {//root控件，x y是相对于父控件，window的父控件为平台的
     height: 300
     title: qsTr("MY QML")
 
+    MyListView{
 
+    }
 
 
 //    Button{
